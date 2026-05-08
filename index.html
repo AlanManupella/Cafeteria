@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página con JS</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+
+      /* Imagen de fondo */
+      background: url("cafeteria.jpg") no-repeat center center/cover;
+    }
+
+    /* Oscurecer un poco el fondo */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.35);
+      z-index: 0;
+    }
+
+    /* Caja principal */
+    .contenedor {
+      position: relative;
+      z-index: 1;
+
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(8px);
+
+      padding: 30px;
+      border-radius: 15px;
+
+      text-align: center;
+      color: white;
+
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #ff9800;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #e68900;
+    }
+
+    #mensajeJS {
+      margin-top: 20px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #ffd700;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="overlay"></div>
+
+  <div class="contenedor">
+    <h1>☕ Café Nocturno</h1>
+    <p>Reclama tu café especial haciendo click abajo.</p>
+
+    <button onclick="mostrarMensaje()">
+      Mostrar Mensaje
+    </button>
+
+    <div id="mensajeJS"></div>
+  </div>
+
+  <script>
+    function mostrarMensaje() {
+      document.getElementById("mensajeJS").innerHTML =
+        "✨Sobreviviste al 2026, Felicidades! toma tu café ✨";
+    }
+  </script>
+
+  <audio controls autoplay loop style="display:debussy;">
+    <source src="cafe.mp3" type="audio/mpeg">
+    
+
+</body>
+</html>
